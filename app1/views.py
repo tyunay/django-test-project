@@ -143,7 +143,6 @@ class CarModelSyndicUpdateView(UpdateView):
         form.fields['syndic'].label_from_instance = lambda obj: f"{obj.surname}"
         return form
 
-
 class CarModelSyndicDeleteView(DeleteView):
     model = CarModelSyndic
     template_name = 'carmodelsyndics/carmodelsyndic_delete.html'

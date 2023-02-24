@@ -43,6 +43,7 @@ class CarModelSyndic(models.Model):
     car_model = models.ForeignKey(CarModel, on_delete = models.CASCADE)
     syndic = models.ForeignKey(Syndic, on_delete = models.CASCADE)
     average_speed = models.IntegerField(validators = [MinValueValidator(0), MaxValueValidator(360)])
+
     class Meta:
         unique_together = [['car_model', 'syndic']]
 

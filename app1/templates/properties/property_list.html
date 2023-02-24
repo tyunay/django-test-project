@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+	<h1> Properties </h1>
+	<a href='{% url "property_add" %}'><h3>Add</h3></a>
+	<ul>
+		{% for property in object_list %}
+		<li><a href='{{ property.get_absolute_url }}'>{{ property.identification_number }}</a></li>
+		{% endfor %}
+	</ul>
+{% endblock %}

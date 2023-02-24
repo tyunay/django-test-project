@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> Car model and Syndic Detail Page </h1>
+<a href='{% url "carmodelsyndic_update" carmodelsyndic.id %}'><h3>Edit</h3></a>
+<a href='{% url "carmodelsyndic_delete" carmodelsyndic.id %}'><h3>Delete</h3></a>
+<h2><u>Car model name</u>: {{ carmodelsyndic.car_model.name }} </h2>
+<h2><u>Syndic name</u>: {{ carmodelsyndic.syndic.surname }} </h2>
+<h2><u>Average driven speed</u>: {{ carmodelsyndic.average_speed }} KM/H</h2>
+{% endblock %}

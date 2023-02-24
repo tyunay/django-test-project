@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> Property Detail Page </h1>
+<a href='{% url "property_update" property.id %}'><h3>Edit</h3></a>
+<a href='{% url "property_delete" property.id %}'><h3>Delete</h3></a>
+<h2><u>Identification number</u>: {{ property.identification_number }} </h2>
+<h2><u>Price</u>: {{ property.price }} BGN</h2>
+<h2><u>Date of release</u>: {{ property.date_of_release }} </h2>
+<h2><u>Listed by</u>: Syndic {{ property.syndic.surname }} </h2>
+{% endblock %}

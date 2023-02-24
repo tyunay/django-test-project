@@ -1,0 +1,19 @@
+<!DOCTYPE html> <html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title></title>
+	</head>
+	<body>
+	<nav>
+		<a href="{% url 'syndic_list' %}">Syndics</a> |
+		<a href="{% url 'secretary_list' %}">Secretaries</a> |
+		<a href="{% url 'property_list' %}">Properties</a> |
+		<a href="{% url 'carmodel_list' %}">Car models</a> |
+		<a href="{% url 'carmodelsyndic_list' %}">Car Models and average driven speeds by Syndics</a>
+	</nav>
+		{% block content %}
+
+		{% endblock %}
+	</body>
+</html>

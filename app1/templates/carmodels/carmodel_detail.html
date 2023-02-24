@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> Car model Detail Page </h1>
+<a href='{% url "carmodel_update" carmodel.id %}'><h3>Edit</h3></a>
+<a href='{% url "carmodel_delete" carmodel.id %}'><h3>Delete</h3></a>
+<h2><u>Model name</u>: {{ carmodel.name }} </h2>
+{% endblock %}

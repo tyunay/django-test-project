@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> Syndic Detail Page </h2>
+<a href='{% url "syndic_update" syndic.id %}'><h3>Edit</h3></a>
+<a href='{% url "syndic_delete" syndic.id %}'><h3>Delete</h3></a>
+<h2><u>Surname</u>: {{ syndic.surname }} </h2>
+<h2><u>Address</u>: {{ syndic.address }} </h2>
+<h2><u>E-mail</u>: {{ syndic.email }} </h2>
+<h2><u>Contact number</u>: {{ syndic.contact_number }} </h2>
+<h2><u>License</u>: {{ syndic.license_number }} </h2>
+<hr>
+<h1> Secretary </h1>
+<h2><u>Name</u>: Ms. {{ syndic.secretary.name }} </h2>
+<hr>
+<h1> Properties responsible for: </h2>
+{% for property in syndic.property_set.all %}
+	<h2><u>Identification number</u>: {{ property.identification_number }} </h2>
+	<h2><u>Price</u>: {{ property.price }} BGN</h2>
+	<h2><u>Date of release</u>: {{ property.date_of_release }} </h2>
+	<h2> -------------------------------------------------------- </h2>
+{% endfor %}
+<hr>
+<h1> Average speed driving with Car models </h1>
+{% for i in syndic.carmodelsyndic_set.all %}
+	<h2><u>Car model</u>: {{ i.car_model.name }} </h2>
+	<h2><u>Average driven speed</u>: {{ i.average_speed }} KM/H</h2>
+	<h2> -------------------------------------------------------- </h2>
+{% endfor %}
+{% endblock %}

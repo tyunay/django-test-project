@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+	<h1> Car models and Syndics </h1>
+	<a href='{% url "carmodelsyndic_add" %}'><h3>Add</h3></a>
+	<ul>
+		{% for carmodelsyndic in object_list %}
+		<li><a href='{{ carmodelsyndic.get_absolute_url }}'>{{ carmodelsyndic.syndic.surname }} and {{ carmodelsyndic.car_model.name }}</a></li>
+		{% endfor %}
+	</ul>
+{% endblock %}

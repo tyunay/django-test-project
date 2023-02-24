@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+	<h1> Syndics </h1>
+	<a href='{% url "syndic_add" %}'><h3>Add</h3></a>
+	<ul>
+		{% for syndic in object_list %}
+		<li><a href='{{ syndic.get_absolute_url }}'>{{ syndic.surname }}</a></li>
+		{% endfor %}
+	</ul>
+{% endblock %}
